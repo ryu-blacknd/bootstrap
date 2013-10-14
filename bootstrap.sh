@@ -67,6 +67,7 @@ cp -a ~/bootstrap/.bashrc ~
 cp -a ~/bootstrap/.dir_colors ~
 cp -a ~/bootstrap/molokai.sh ~
 chmod 755 ~/molokai.sh
+source ~/.bashrc
 
 #
 # Git
