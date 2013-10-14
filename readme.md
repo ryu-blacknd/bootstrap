@@ -16,9 +16,10 @@ NetBeans → ローカルGitリポジトリ → リモートベアリポジト�
 
 ## 使い方
 
-rootでログイン後、取得した bootstrap.sh を実行するだけです。
+rootでログイン後、もしインストールしていなければ git をインストール後、取得した bootstrap.sh を実行するだけです。
 
 ~~~~
+# yum -y install git
 # cd
 # git clone https://github.com/ryu-blacknd/bootstrap.git
 # bootstrap/bootstrap.sh
