@@ -1,35 +1,30 @@
-# setup script for CentOS64
+# CentOS6用 LAN内開発サーバ構築スクリプト
 
-ローカル開発環境用にCentOS64の仮想サーバを利用する際に、開発環境を一発でセットアップするスクリプトです。
+ローカル開発環境用に CentOS 6.4 (x86/64) の仮想サーバを構築し、開発環境を一発でセットアップするスクリプトです。
 
-NetBeans → ローカルGitリポジトリ → リモートベアリポジトリ → 本番環境リポジトリで自動pull、という開発フローを想定しています。
+詳細は以下のブログで紹介しています。
 
-セキュリティ関係、LAMP (Apache, MySQL, PHP) 、Ruby等の環境を自動構築し、さらにphpMyAdminと、プロジェクト管理のRedmineも自動インストールします。
-
-オマケとして、bash周りやvim周りもすぐに使い物になるよう環境構築します。
+[CentOS6用 LAN内開発サーバ構築スクリプト - BLACKND](http://blacknd.com/linux-server/centos-development-server-bootstrap-script/)
 
 ## 動作環境
 
-- VirtualBox (Vagrantでつくった仮想マシンでも可）
-- CentOS x86/64 minimal iso イメージでのインストール直後
-- ネットワーク接続はNAT+ホストオンリーで設定済みであること
+- LAN 内のサーバ PC、または VirtualBox 等の仮想マシン (Vagrant 可)
+- CentOS x86/64 minimal iso イメージでのインストール直後であること
 
 ## インストール
 
-rootでログイン後、もしインストールしていなければ git をインストール後、取得した bootstrap.sh を実行するだけです。
+rootでログインし、git をインストール後、取得した bootstrap.sh を実行するだけです。
 
 ~~~~
-# yum -y install git
-# cd
-# git clone https://github.com/ryu-blacknd/bootstrap.git
-# bootstrap/bootstrap.sh
+ # yum -y install git
+ # cd
+ # git clone https://github.com/ryu-blacknd/bootstrap.git
+ # bootstrap/bootstrap.sh
 ~~~~
-
-ほぼノンストップで進んでいきますが、Passengerのインストール時のみ、画面に表示される通り Enter を押して進んでください。 (修正予定)
 
 ## 最初にすること
 
-vim : 初回起動時、以下を実行してください。
+vim の初回起動時、以下を実行してプラグインをインストールしてください。
 
 ~~~~
 :NeoBundleInstall
@@ -38,6 +33,8 @@ vim : 初回起動時、以下を実行してください。
 root アカウントでログイン後、リブートを行います。
 
 ~~~~
-# reboot
+ # reboot
 ~~~~
+
+__※その他、詳しい解説はブログ記事をご覧ください。__
 

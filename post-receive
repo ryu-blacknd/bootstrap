@@ -1,0 +1,11 @@
+#!/bin/sh
+CURL="/usr/bin/curl -s"
+REDMINE_URL_BASE="http://******/redmine/"
+REDMINE_REPOS_API_KEY=******
+REDMINE_PROJECT_ID=******
+ 
+echo "Updating Redmine..."
+RESPONSE=$($CURL "${REDMINE_URL_BASE}sys/fetch_changesets?key=${REDMINE_REPOS_API_KEY}&id=${REDMINE_PROJECT_ID}")
+echo $RESPONSE
+exit 0
+
