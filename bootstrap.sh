@@ -167,7 +167,7 @@ RAILS_ENV=production bundle exec rake db:migrate
 echo -e "\033[0;32m[Passenger Install]\033[0;39m"
 gem install passenger --no-rdoc --no-ri
 passenger-install-apache2-module
-cp -a ~/bootstrap/passenger.conf etc/httpd/conf.d
+cp -a ~/bootstrap/passenger.conf /etc/httpd/conf.d/passenger.conf
 chown -R apache. /var/lib/redmine
 ln -s /var/lib/redmine/public /var/www/html/redmine
 
