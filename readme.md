@@ -1,8 +1,10 @@
 # setup script for CentOS64
 
-ローカル開発環境用の仮想サーバにCentOS64を利用する際に、開発環境を一発でセットアップするスクリプトです。
+ローカル開発環境用にCentOS64の仮想サーバを利用する際に、開発環境を一発でセットアップするスクリプトです。
 
-セキュリティ関係、LAMP (Apache, MySQL, PHP) 環境、Ruby on Rails環境を自動構築し、さらにphpMyAdminと、プロジェクト管理のRedmineも自動インストールします。
+NetBeans → ローカルGitリポジトリ → リモートベアリポジトリ → 本番環境リポジトリで自動pull、という開発フローを想定しています。
+
+セキュリティ関係、LAMP (Apache, MySQL, PHP) 、Ruby等の環境を自動構築し、さらにphpMyAdminと、プロジェクト管理のRedmineも自動インストールします。
 
 オマケとして、bash周りやvim周りもすぐに使い物になるよう環境構築します。
 
@@ -17,6 +19,7 @@
 rootでログイン後、取得した bootstrap.sh を実行するだけです。
 
 ~~~~
+# cd
 # git clone https://github.com/ryu-blacknd/bootstrap.git
 # bootstrap/bootstrap.sh
 ~~~~
