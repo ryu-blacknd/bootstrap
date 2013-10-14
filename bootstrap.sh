@@ -154,26 +154,8 @@ cd ..
 #
 echo -e "\033[0;32m[Redmine Install]\033[0;39m"
 svn co http://svn.redmine.org/redmine/branches/2.3-stable /var/lib/redmine
-CNF="production:
-  adapter: mysql2
-  database: redmine
-  host: localhost
-  username: redmine
-  password: redmine
-  encoding: utf8
-"
-cat $CNF > /var/lib/redmine/configdatabase.yml
-CNF="production:
-  email_delivery:
-    delivery_method: :smtp
-    smtp_settings:
-      address: "localhost"
-      port: 25
-      domain: 'blacknd.dip.jp'
-
-  rmagick_font_path: /usr/share/fonts/ipa-pgothic/ipagp.ttf
-"
-cat $CNF > /var/lib/redmine/config/configuration.yml
+cp -a ~/bootstrap/database.yml /var/lib/redmine/config/database.yml
+cp -a ~/bootstrap/configdatabase.yml /var/lib/redmine/config/configuration.yml
 cd /var/lib/redmine
 bundle install --without development test
 bundle exec rake generate_secret_token
@@ -185,27 +167,7 @@ RAILS_ENV=production bundle exec rake db:migrate
 echo -e "\033[0;32m[Passenger Install]\033[0;39m"
 gem install passenger --no-rdoc --no-ri
 passenger-install-apache2-module
-CNF="LoadModule passenger_module /usr/local/lib/ruby/gems/1.9.1/gems/passenger-4.0.20/buildout/apache2/mod_passenger.so
-PassengerRoot /usr/local/lib/ruby/gems/1.9.1/gems/passenger-4.0.20
-PassengerDefaultRuby /usr/local/bin/ruby
-
-Header always unset "X-Powered-By"
-Header always unset "X-Rack-Cache"
-Header always unset "X-Content-Digest"
-Header always unset "X-Runtime"
-
-PassengerMaxPoolSize 20
-PassengerMaxInstancesPerApp 4
-PassengerPoolIdleTime 3600
-PassengerHighPerformance on
-PassengerStatThrottleRate 10
-PassengerSpawnMethod smart
-RailsAppSpawnerIdleTime 86400
-PassengerMaxPreloaderIdleTime 0
-
-RackBaseURI /redmine
-"
-cat $CNF > etc/httpd/conf.d/passenger.conf
+cp -a ~/bootstrap/passenger.conf etc/httpd/conf.d
 chown -R apache. /var/lib/redmine
 ln -s /var/lib/redmine/public /var/www/html/redmine
 
