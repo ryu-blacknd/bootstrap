@@ -116,6 +116,16 @@ set noswapfile
 " set directory=~/.vim_tmp
 
 "----------------------------------------
+" autocmd
+"----------------------------------------
+
+augroup General
+ autocmd!
+ autocmd BufWinLeave * silent mkview
+ autocmd BufWinEnter * silent loadview
+augroup END
+
+"----------------------------------------
 " encoding
 "----------------------------------------
 

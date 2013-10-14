@@ -5,7 +5,7 @@
 #
 echo -e "\033[0;32m[Stop selinux]\033[0;39m"
 setenforce 0
-sed -i -e 's/^SELINUX=enforcing/SELINUX=disabled/' /etc/sysconfig/selinux
+sed -i -e 's/^SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 
 #
 # Stop iptables
@@ -51,7 +51,7 @@ echo -e "\033[0;32m[yum install Development Tools]\033[0;39m"
 yum --enablerepo=remi -y groupinstall "Development Tools"
 
 echo -e "\033[0;32m[yum install others]\033[0;39m"
-yum --enablerepo=remi -y install man lv w3m vim wget yum-cron openssl-devel readline-devel zlib-devel curl-devel libyaml-devel ImageMagick ImageMagick-devel ipa-pgothic-fonts ntp httpd httpd-devel mysql-server mysql-devel php php-cli php-pdo php-mbstring php-mcrypt php-mysql php-devel php-common php-pear php-gd php-xml php-pecl-xdebug php-pecl-imagick
+yum --enablerepo=remi -y install mlocate man w3m vim wget yum-cron openssl-devel readline-devel zlib-devel curl-devel libyaml-devel ImageMagick ImageMagick-devel ipa-pgothic-fonts ntp httpd httpd-devel mysql-server mysql-devel php php-cli php-pdo php-mbstring php-mcrypt php-mysql php-devel php-common php-pear php-gd php-xml php-pecl-xdebug php-pecl-imagick
 
 chkconfig yum-cron on
 
