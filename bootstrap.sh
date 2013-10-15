@@ -76,6 +76,9 @@ echo -e "\033[0;32m[Git]\033[0;39m"
 git config --global http.sslverify false
 useradd git
 echo "git" | passwd --stdin git
+mkdir /home/git/.ssh
+touch /home/git/.ssh/authorized_keys
+chmod 600 /home/git/.ssh/authorized_keys
 mkdir /var/repos
 chown git. /var/repos
 chown git. /var/www/html
