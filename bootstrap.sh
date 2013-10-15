@@ -206,6 +206,10 @@ git clone https://github.com/alexbevi/redmine_knowledgebase.git
 bundle update
 bundle exec rake redmine:plugins:migrate RAILS_ENV=production
 
+gem install --version 2.0.0b5 redcarpet
+git clone https://github.com/alminium/redmine_redcarpet_formatter.git
+bundle exec rake redmine:plugins:migrate RAILS_ENV=production
+
 #
 # Start Service
 #
