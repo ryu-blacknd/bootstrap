@@ -83,7 +83,7 @@ chown devuser. /var/repos
 #
 echo -e "\033[0;32m[Sudoers]\033[0;39m"
 sed -i -e 's/^Defaults    requiretty/#Defaults    requiretty/' /etc/sudoers
-echo "\n\ndevuser ALL = NOPASSWD: /usr/bin/git/" >> /etc/sudoers
+echo "devuser ALL = NOPASSWD: /usr/bin/git/" >> /etc/sudoers
 
 #
 # ntp
