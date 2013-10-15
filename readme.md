@@ -4,7 +4,7 @@
 
 詳細は以下のブログで紹介しています。
 
-[CentOS6用 LAN内開発サーバ構築スクリプト - BLACKND](http://blacknd.com/linux-server/centos-development-server-bootstrap-script/)
+[CentOS 6.4仮想マシンにLAMP, Git, Redmine, phpMyAdminな開発サーバを一発構築するスクリプト - BLACKND](http://blacknd.com/linux-server/centos-development-server-bootstrap-script/)
 
 ## 動作環境
 
