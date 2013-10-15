@@ -74,21 +74,22 @@ source ~/.bashrc
 #
 echo -e "\033[0;32m[Git]\033[0;39m"
 git config --global http.sslverify false
-useradd git
-echo "git" | passwd --stdin git
-mkdir /home/git/.ssh
-touch /home/git/.ssh/authorized_keys
-chmod 600 /home/git/.ssh/authorized_keys
+useradd gituser
+echo "gituser" | passwd --stdin gituser
+mkdir /home/gituser/.ssh
+touch /home/gituser/.ssh/authorized_keys
+chown gituser. /home/gituser/.ssh/authorized_keys
+chmod 600 /home/gituser/.ssh/authorized_keys
 mkdir /var/repos
-chown git. /var/repos
-chown git. /var/www/html
+chown gituser. /var/repos
+chown gituser. /var/www/html
 
 #
 # Sudoers
 #
 # echo -e "\033[0;32m[Sudoers]\033[0;39m"
 # sed -i -e 's/^Defaults    requiretty/#Defaults    requiretty/' /etc/sudoers
-# echo "git ALL = NOPASSWD: /usr/bin/git" >> /etc/sudoers
+# echo "gituser ALL = NOPASSWD: /usr/bin/git" >> /etc/sudoers
 
 #
 # ntp
