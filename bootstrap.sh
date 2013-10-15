@@ -74,18 +74,18 @@ source ~/.bashrc
 #
 echo -e "\033[0;32m[Git]\033[0;39m"
 git config --global http.sslverify false
-useradd devuser
-echo "devuser" | passwd --stdin devuser
+useradd git
+echo "git" | passwd --stdin git
 mkdir /var/repos
-chown devuser. /var/repos
-chown devuser. /var/www/html
+chown git. /var/repos
+chown git. /var/www/html
 
 #
 # Sudoers
 #
 # echo -e "\033[0;32m[Sudoers]\033[0;39m"
 # sed -i -e 's/^Defaults    requiretty/#Defaults    requiretty/' /etc/sudoers
-# echo "devuser ALL = NOPASSWD: /usr/bin/git" >> /etc/sudoers
+# echo "git ALL = NOPASSWD: /usr/bin/git" >> /etc/sudoers
 
 #
 # ntp
