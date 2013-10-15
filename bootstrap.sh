@@ -78,6 +78,7 @@ useradd devuser
 echo "devuser" | passwd --stdin devuser
 mkdir /var/repos
 chown devuser. /var/repos
+chown devuser. /var/www/html
 
 #
 # Sudoers
