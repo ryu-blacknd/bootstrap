@@ -1,3 +1,4 @@
 #!/bin/sh
-git update-server-info
-cd /var/www/html && sudo git –-git-dir=.git pull
+/usr/bin/wget -q -O /dev/null http://****/redmine/sys/fetch_changesets?key=****
+(cd /var/www/html && git --git-dir=.git pull)
+
