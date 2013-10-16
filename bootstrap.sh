@@ -196,16 +196,21 @@ unzip redmine_wiki_extensions-0.6.4.zip
 bundle update
 bundle exec rake redmine:plugins:migrate RAILS_ENV=production
 
+gem install --version 2.0.0b5 redcarpet
+git clone https://github.com/alminium/redmine_redcarpet_formatter.git
+bundle exec rake redmine:plugins:migrate RAILS_ENV=production
+
 wget https://bitbucket.org/kusu/redmine_work_time/downloads/redmine_work_time-0.2.14.zip
 unzip redmine_work_time-0.2.14.zip
 bundle exec rake redmine:plugins:migrate RAILS_ENV=production
 
-git clone https://github.com/daipresents/redmine_parking_lot_chart.git
-bundle exec rake redmine:plugins:migrate RAILS_ENV=production
+# wget https://bitbucket.org/haru_iida/redmine_code_review/downloads/redmine_code_review-0.6.3.zip
+# unzip redmine_code_review-0.6.3.zip
+# bundle update
+# bundle exec rake redmine:plugins:migrate RAILS_ENV=production
 
-gem install --version 2.0.0b5 redcarpet
-git clone https://github.com/alminium/redmine_redcarpet_formatter.git
-bundle exec rake redmine:plugins:migrate RAILS_ENV=production
+# git clone https://github.com/daipresents/redmine_parking_lot_chart.git
+# bundle exec rake redmine:plugins:migrate RAILS_ENV=production
 
 #
 # Start Service
