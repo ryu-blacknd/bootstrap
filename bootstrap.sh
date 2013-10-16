@@ -139,7 +139,8 @@ cd
 wget http://downloads.sourceforge.net/project/phpmyadmin/phpMyAdmin/4.0.8/phpMyAdmin-4.0.8-all-languages.zip
 unzip phpMyAdmin-4.0.8-all-languages.zip -d /var/www/html
 mv /var/www/html/phpMyAdmin-4.0.8-all-languages /var/www/html/phpmyadmin
-chown -R apache. /var/www/html/*
+cp /var/www/html/phpmyadmin/config.sample.inc.php /var/www/html/phpmyadmin/config.inc.php
+chown -R apache. /var/www/html/phpmyadmin
 
 #
 # Ruby & bundler
