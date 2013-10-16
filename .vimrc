@@ -20,11 +20,11 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache'
-" NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'nginx.vim'
 NeoBundle 'hallison/vim-markdown'
 NeoBundle 'nanotech/jellybeans.vim'
@@ -58,26 +58,26 @@ au BufRead,BufNewFile /etc/php-fpm.d/* set syntax=dosini
 
 set scrolloff=10
 set laststatus=2
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 set notitle
-" set cursorline " <-- this makes cursor slow
 set number
-" set list
-" set listchars=tab:»\ ,eol:¬
-" set guifont=Droid_Sans_Mono_Slashed_for_Powerline:h11
-let g:Powerline_symbols='fancy'
-
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"x":""}',
+      \ },
+      \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" },
+      \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" }
+      \ }
 "----------------------------------------
 " tab
 "----------------------------------------
- 
+
 set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smarttab
 set shiftround
-" set nowrap
 
 "----------------------------------------
 " edit
@@ -111,19 +111,7 @@ set smartcase
 "----------------------------------------
 
 set nobackup
-" set backupdir=~/.vim_tmp
 set noswapfile
-" set directory=~/.vim_tmp
-
-"----------------------------------------
-" autocmd
-"----------------------------------------
-
-" augroup General
- " autocmd!
- " autocmd BufWinLeave * silent mkview
- " autocmd BufWinEnter * silent loadview
-" augroup END
 
 "----------------------------------------
 " encoding
