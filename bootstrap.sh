@@ -173,7 +173,7 @@ RAILS_ENV=production bundle exec rake db:migrate
 echo -e "\033[0;32m[Passenger Install]\033[0;39m"
 gem install passenger --no-rdoc --no-ri
 expect -c "
-set timeout 5
+set timeout -1 
 spawn passenger-install-apache2-module
 expect \"Press Enter to continue, or Ctrl-C to abort.\"
 send \"\n\"
