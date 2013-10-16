@@ -101,6 +101,9 @@ echo -e "\033[0;32m[Start ntp]\033[0;39m"
 #
 # Apache
 #
+echo -e "\033[0;32m[Apache Setting]\033[0;39m"
+echo "<?php phpinfo(); ?>" > /var/www/html/index.php
+chown apache. /var/www/html/index.php
 /sbin/chkconfig httpd on
 
 #
