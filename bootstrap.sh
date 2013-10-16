@@ -177,7 +177,7 @@ set timeout -1
 spawn passenger-install-apache2-module
 expect \"Press Enter to continue, or Ctrl-C to abort.\"
 send \"\n\"
-expect \"Press Enter to continue.\"
+expect \"Press ENTER to continue.\"
 send \"\n\"
 "
 cp -a ~/bootstrap/passenger.conf /etc/httpd/conf.d/passenger.conf
