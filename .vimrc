@@ -64,7 +64,7 @@ set notitle
 set number
 " set list
 " set listchars=tab:»\ ,eol:¬
-set guifont=Droid_Sans_Mono_Slashed_for_Powerline:h11
+" set guifont=Droid_Sans_Mono_Slashed_for_Powerline:h11
 let g:Powerline_symbols='fancy'
 
 "----------------------------------------
@@ -119,11 +119,11 @@ set noswapfile
 " autocmd
 "----------------------------------------
 
-augroup General
- autocmd!
- autocmd BufWinLeave * silent mkview
- autocmd BufWinEnter * silent loadview
-augroup END
+" augroup General
+ " autocmd!
+ " autocmd BufWinLeave * silent mkview
+ " autocmd BufWinEnter * silent loadview
+" augroup END
 
 "----------------------------------------
 " encoding
