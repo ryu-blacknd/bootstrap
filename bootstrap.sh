@@ -211,6 +211,9 @@ wget https://bitbucket.org/kusu/redmine_work_time/downloads/redmine_work_time-0.
 unzip redmine_work_time-0.2.14.zip
 bundle exec rake redmine:plugins:migrate RAILS_ENV=production
 
+git clone https://github.com/vividtone/redmine_vividtone_my_page_blocks.git
+bundle exec rake redmine:plugins:migrate RAILS_ENV=production
+
 # wget https://bitbucket.org/haru_iida/redmine_code_review/downloads/redmine_code_review-0.6.3.zip
 # unzip redmine_code_review-0.6.3.zip
 # bundle update
