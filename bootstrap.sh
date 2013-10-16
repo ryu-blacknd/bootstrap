@@ -189,6 +189,7 @@ ln -s /var/lib/redmine/public /var/www/html/redmine
 #
 echo -e "\033[0;32m[Redmine themes]\033[0;39m"
 cd /var/lib/redmine/public/themes
+git clone https://github.com/farend/redmine_theme_farend_basic.git
 git clone https://github.com/farend/redmine_theme_farend_fancy.git
 git clone https://github.com/makotokw/redmine-theme-gitmike.git
 
