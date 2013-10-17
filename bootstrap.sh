@@ -56,20 +56,6 @@ yum --enablerepo=remi -y install mercurial expect mlocate man finger w3m vim wge
 chkconfig yum-cron on
 
 #
-# Shell & Editor
-#
-echo -e "\033[0;32m[Shell & Editor]\033[0;39m"
-cd
-mkdir -p ~/.vim/bundle
-git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-cp -a ~/bootstrap/.vimrc ~
-cp -a ~/bootstrap/.bashrc ~
-cp -a ~/bootstrap/.dir_colors ~
-cp -a ~/bootstrap/molokai.sh ~
-chmod 755 ~/molokai.sh
-source ~/.bashrc
-
-#
 # Git
 #
 echo -e "\033[0;32m[Git]\033[0;39m"
@@ -83,6 +69,32 @@ chmod 600 /home/gituser/.ssh/authorized_keys
 mkdir /var/repos
 chown gituser. /var/repos
 chown gituser. /var/www/html
+
+#
+# Shell & Editor
+#
+echo -e "\033[0;32m[Shell & Editor - root]\033[0;39m"
+cd
+mkdir -p .vim/bundle
+git clone git://github.com/Shougo/neobundle.vim .vim/bundle/neobundle.vim
+cp -a ~/bootstrap/.vimrc .
+cp -a ~/bootstrap/.bashrc .
+cp -a ~/bootstrap/.dir_colors .
+cp -a ~/bootstrap/molokai.sh .
+chmod 755 ./molokai.sh
+
+echo -e "\033[0;32m[Shell & Editor - gituser]\033[0;39m"
+cd /home/gituser
+mkdir -p .vim/bundle
+git clone git://github.com/Shougo/neobundle.vim .vim/bundle/neobundle.vim
+cp -a ~/bootstrap/.vimrc .
+cp -a ~/bootstrap/.bashrc .
+cp -a ~/bootstrap/.dir_colors .
+cp -a ~/bootstrap/molokai.sh .
+cp -a ~/bootstrap/post-update .
+chmod 755 ./molokai.sh
+chown -R gituser. * .*
+cd
 
 
 #
