@@ -83,8 +83,6 @@ chmod 600 /home/gituser/.ssh/authorized_keys
 mkdir /var/repos
 chown gituser. /var/repos
 chown gituser. /var/www/html
-usermode -G wheel gituser
-echo '%wheel    ALL=(ALL)   NOPASSWD: ALL' >> /etc/sudoers
 
 
 #
@@ -106,7 +104,10 @@ echo -e "\033[0;32m[Start ntp]\033[0;39m"
 #
 echo -e "\033[0;32m[Apache Setting]\033[0;39m"
 echo "<?php phpinfo(); ?>" > /var/www/html/index.php
-chown apache. /var/www/html/index.php
+set -i -e "s/^User apache/User gituser/" /etc/httpd/conf/httpd.conf
+set -i -e "s/^Group apache/Group gituser/" /etc/httpd/conf/httpd.conf
+# chown apache. /var/www/html/index.php
+chown gituser. /var/www/html/index.php
 /sbin/chkconfig httpd on
 
 #
@@ -143,7 +144,8 @@ wget http://downloads.sourceforge.net/project/phpmyadmin/phpMyAdmin/4.0.8/phpMyA
 unzip phpMyAdmin-4.0.8-all-languages.zip -d /var/www/html
 mv /var/www/html/phpMyAdmin-4.0.8-all-languages /var/www/html/phpmyadmin
 cp /var/www/html/phpmyadmin/config.sample.inc.php /var/www/html/phpmyadmin/config.inc.php
-chown -R apache. /var/www/html/phpmyadmin
+# chown -R apache. /var/www/html/phpmyadmin
+chown -R gituser. /var/www/html/phpmyadmin
 
 #
 # Ruby & bundler
@@ -188,7 +190,8 @@ expect \"Press ENTER to continue.\"
 send \"\n\"
 "
 cp -a ~/bootstrap/passenger.conf /etc/httpd/conf.d/passenger.conf
-chown -R apache. /var/lib/redmine
+# chown -R apache. /var/lib/redmine
+chown -R gituser. /var/lib/redmine
 ln -s /var/lib/redmine/public /var/www/html/redmine
 
 #
