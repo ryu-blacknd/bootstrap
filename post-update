@@ -1,4 +1,4 @@
 #!/bin/sh
 /usr/bin/wget -q -O /dev/null http://localhost/redmine/sys/fetch_changesets?key=****
-(cd /var/www/html/**** && git --git-dir=.git pull)
+(cd /var/www/html/**** && git --git-dir=.git pull && sudo chown -R apache. *)
 
