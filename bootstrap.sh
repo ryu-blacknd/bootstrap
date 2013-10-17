@@ -83,6 +83,9 @@ chmod 600 /home/gituser/.ssh/authorized_keys
 mkdir /var/repos
 chown gituser. /var/repos
 chown gituser. /var/www/html
+usermode -G wheel gituser
+echo '%wheel    ALL=(ALL)   NOPASSWD: ALL' >> /etc/sudoers
+
 
 #
 # Sudoers
