@@ -78,6 +78,7 @@ set softtabstop=4
 set shiftwidth=4
 set smarttab
 set shiftround
+" set showtabline=2
 
 "----------------------------------------
 " edit
