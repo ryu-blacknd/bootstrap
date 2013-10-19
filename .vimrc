@@ -19,6 +19,7 @@ NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-fugitive'
@@ -113,6 +114,16 @@ set smartcase
 
 set nobackup
 set noswapfile
+
+"----------------------------------------
+" autocmd
+"----------------------------------------
+
+" augroup General
+ " autocmd!
+ " autocmd BufWinLeave * silent mkview
+ " autocmd BufWinEnter * silent loadview
+" augroup END
 
 "----------------------------------------
 " encoding
