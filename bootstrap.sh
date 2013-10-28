@@ -92,6 +92,7 @@ cp -a ~/bootstrap/.bashrc .
 cp -a ~/bootstrap/.dir_colors .
 cp -a ~/bootstrap/molokai.sh .
 cp -a ~/bootstrap/post-update .
+cp -a ~/bootstrap/makerepo.sh .
 chmod 755 ./molokai.sh
 chown -R gituser. * .*
 cd
