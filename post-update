@@ -1,7 +1,7 @@
 #!/bin/sh
 
-PROJ_NAME=[PROJ_NAME]
 API_KEY=[API_KEY]
+PROJ_NAME=[PROJ_NAME]
 
 /usr/bin/wget -q -O /dev/null http://localhost/redmine/sys/fetch_changesets?key=${API_KEY}
 cd /var/www/html/${PROJ_NAME} && git --git-dir=.git pull
