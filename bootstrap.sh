@@ -165,9 +165,9 @@ yum -y remove ruby
 yum -y remove ruby-*
 mkdir src
 cd src
-curl -O ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p448.tar.gz
-tar zxvf ruby-1.9.3-p448.tar.gz
-cd ruby-1.9.3-p448
+curl -O ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p484.tar.gz
+tar zxvf ruby-1.9.3-p484.tar.gz
+cd ruby-1.9.3-p484
 ./configure --disable-install-doc
 make
 make install
@@ -190,7 +190,7 @@ RAILS_ENV=production bundle exec rake db:migrate
 # Passenger
 #
 echo -e "\033[0;32m[Passenger Install]\033[0;39m"
-gem install passenger --no-rdoc --no-ri
+gem install passenger --version 4.0.25 --no-rdoc --no-ri
 expect -c "
 set timeout -1 
 spawn passenger-install-apache2-module
