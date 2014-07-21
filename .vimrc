@@ -29,6 +29,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'nginx.vim'
 NeoBundle 'hallison/vim-markdown'
 NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'w0ng/vim-hybrid'
 
 filetype plugin indent on
 
@@ -38,7 +39,8 @@ filetype plugin indent on
 
 let g:neocomplcache_enable_at_startup = 1
 " let g:neocomplcache_enable_insert_char_pre = 1
-inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
+" inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
+inoremap <expr><CR> neocomplcache#smart_close_popup()
 inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<Up>" : "\<S-TAB>"
 
@@ -46,9 +48,11 @@ inoremap <expr><S-TAB> pumvisible() ? "\<Up>" : "\<S-TAB>"
 " syntax color
 " ---------------------------------------
 
-set t_Co=256
 syntax on
+set t_Co=256
+let g:hybrid_use_Xresources = 1
 colorscheme jellybeans
+" colorscheme hybrid
 au BufRead,BufNewFile /etc/nginx/* set ft=nginx
 au BufRead,BufNewFile /etc/php-fpm.conf set ft=php
 au BufRead,BufNewFile /etc/php-fpm.d/* set syntax=dosini
