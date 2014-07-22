@@ -151,9 +151,9 @@ mysql -u root -e "$SQL"
 #
 echo -e "\033[0;32m[phpMyAdmin Install]\033[0;39m"
 cd
-wget http://downloads.sourceforge.net/project/phpmyadmin/phpMyAdmin/4.0.8/phpMyAdmin-4.0.8-all-languages.zip
-unzip phpMyAdmin-4.0.8-all-languages.zip -d /var/www/html
-mv /var/www/html/phpMyAdmin-4.0.8-all-languages /var/www/html/phpmyadmin
+wget http://downloads.sourceforge.net/project/phpmyadmin/phpMyAdmin/4.2.6/phpMyAdmin-4.2.6-all-languages.zip
+unzip phpMyAdmin-4.2.6-all-languages.zip -d /var/www/html
+mv /var/www/html/phpMyAdmin-4.2.6-all-languages /var/www/html/phpmyadmin
 cp /var/www/html/phpmyadmin/config.sample.inc.php /var/www/html/phpmyadmin/config.inc.php
 chown -R apache. /var/www/html/phpmyadmin
 
@@ -165,9 +165,9 @@ yum -y remove ruby
 yum -y remove ruby-*
 mkdir src
 cd src
-curl -O ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p484.tar.gz
-tar zxvf ruby-1.9.3-p484.tar.gz
-cd ruby-1.9.3-p484
+curl -O ftp://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz
+tar zxvf ruby-2.1.2.tar.gz
+cd ruby-2.1.2
 ./configure --disable-install-doc
 make
 make install
@@ -178,7 +178,7 @@ cd ..
 # Redmine
 #
 echo -e "\033[0;32m[Redmine Install]\033[0;39m"
-svn co http://svn.redmine.org/redmine/branches/2.3-stable /var/lib/redmine
+svn co http://svn.redmine.org/redmine/branches/2.5-stable /var/lib/redmine
 cp -a ~/bootstrap/database.yml /var/lib/redmine/config/database.yml
 cp -a ~/bootstrap/configdatabase.yml /var/lib/redmine/config/configuration.yml
 cd /var/lib/redmine
@@ -233,8 +233,8 @@ wget https://bitbucket.org/kusu/redmine_work_time/downloads/redmine_work_time-0.
 unzip redmine_work_time-0.2.14.zip
 bundle exec rake redmine:plugins:migrate RAILS_ENV=production
 
-git clone https://github.com/vividtone/redmine_vividtone_my_page_blocks.git
-bundle exec rake redmine:plugins:migrate RAILS_ENV=production
+# git clone https://github.com/vividtone/redmine_vividtone_my_page_blocks.git
+# bundle exec rake redmine:plugins:migrate RAILS_ENV=production
 
 # wget https://bitbucket.org/haru_iida/redmine_code_review/downloads/redmine_code_review-0.6.3.zip
 # unzip redmine_code_review-0.6.3.zip
