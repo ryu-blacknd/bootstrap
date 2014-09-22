@@ -38,9 +38,7 @@ filetype plugin indent on
 "----------------------------------------
 
 let g:neocomplcache_enable_at_startup = 1
-" let g:neocomplcache_enable_insert_char_pre = 1
-" inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
-inoremap <expr><CR> neocomplcache#smart_close_popup()
+" inoremap <expr><CR> neocomplcache#smart_close_popup()
 inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<Up>" : "\<S-TAB>"
 
