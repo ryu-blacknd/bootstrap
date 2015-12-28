@@ -73,16 +73,6 @@ chown gituser. /var/www/html
 #
 # Shell & Editor
 #
-echo -e "\033[0;32m[Shell & Editor - root]\033[0;39m"
-cd
-mkdir -p .vim/bundle
-git clone git://github.com/Shougo/neobundle.vim .vim/bundle/neobundle.vim
-cp -a ~/bootstrap/.vimrc .
-cp -a ~/bootstrap/.bashrc .
-cp -a ~/bootstrap/.dir_colors .
-cp -a ~/bootstrap/molokai.sh .
-chmod 755 ./molokai.sh
-
 echo -e "\033[0;32m[Shell & Editor - gituser]\033[0;39m"
 cd /home/gituser
 mkdir -p .vim/bundle
