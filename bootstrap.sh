@@ -71,19 +71,18 @@ chown gituser. /var/repos
 chown gituser. /var/www/html
 
 #
-# Shell & Editor
+# Editor & Scripts
 #
 echo -e "\033[0;32m[Shell & Editor - gituser]\033[0;39m"
 cd /home/gituser
 mkdir -p .vim/bundle
 git clone git://github.com/Shougo/neobundle.vim .vim/bundle/neobundle.vim
-cp -a ~/bootstrap/.vimrc .
-cp -a ~/bootstrap/.bashrc .
-cp -a ~/bootstrap/.dir_colors .
-cp -a ~/bootstrap/molokai.sh .
+git clone https://github.com/ryu-blacknd/dotfiles.git
+cp -a dotfiles/.bashrc .
+cp -a dotfiles/.vimrc .
+rm -rf dotfiles
 cp -a ~/bootstrap/post-update .
 cp -a ~/bootstrap/makerepo.sh .
-chmod 755 ./molokai.sh
 chown -R gituser. * .*
 cd
 
@@ -182,7 +181,7 @@ RAILS_ENV=production bundle exec rake db:migrate
 echo -e "\033[0;32m[Passenger Install]\033[0;39m"
 gem install passenger --version 4.0.25 --no-rdoc --no-ri
 expect -c "
-set timeout -1 
+set timeout -1
 spawn passenger-install-apache2-module
 expect \"Press Enter to continue, or Ctrl-C to abort.\"
 send \"\n\"
@@ -240,4 +239,3 @@ bundle exec rake redmine:plugins:migrate RAILS_ENV=production
 echo -e "\033[0;32m[Start Service]\033[0;39m"
 /sbin/service httpd start
 /sbin/service mysqld restart
-
